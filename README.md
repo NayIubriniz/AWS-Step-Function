@@ -3,14 +3,14 @@
 ## 1. Sobre o Desafio
 Este repositório documenta minha prática com **AWS Step Functions**, consolidando conceitos aprendidos nas aulas da DIO. Objetivo foi criar workflows automatizados e entender a lógica de escolha de estados, usando Pass, Choice, Succed e Fail.
 
-## 2. Objetivos de Aprendizagem
+## 2. Objetivos da Aprendizagem
 - Aplicar conceitos de AWS Step Functions em um ambiente prático.
 - Documentar processos técnicos de forma clara e organizada.
-- Usar Github como ferramenta de compartilhamento de documetação.
+- Usar Github como ferramenta de compartilhamento de documentação.
 
 ## 3. Descrição do Projeto
 O projeto consiste em uma **State Machine** que simula a validação de pedidos e processamento de pagamento:
-- **ValidarPedido:** Estado do tipo Pass para validar o pedidio.
+- **ValidarPedido:** Estado do tipo Pass para validar o pedido.
 -  **ProcessarPagamento:** Estado do tipo Choice para decidir aprovação com base no valor.
 -  **PagamentoAprovado:** Estado do tipo Succed.
 -  **PagamentoNegado:** Estado do tipo Fail quando o pagamento não atende ao critério.
@@ -19,9 +19,9 @@ O projeto consiste em uma **State Machine** que simula a validação de pedidos 
 - **Critério de aprovação:** valor do pagamento > 150
 -  **Critério de negação:** valor <= 150
 -  Segue as imagens do projeto AWS:
-![Gráfico exibido](img/stepfunctions_graph.png)
 ![Valor Aprovado](img/sucesso.png)
 ![Vaalor Negado](img/Falha.png)
+![Gráfico exibido](img/stepfunctions_graph.png)
   
 ## 5. Arquivos inclusos
 - `step-functions.json`: JSON da State Machine utilizada
