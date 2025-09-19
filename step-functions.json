@@ -1,0 +1,31 @@
+{
+    "Comment": "Exemplo simples de State Machine",
+    "StartAt": "ValidarPedido",
+    "States": {
+      "ValidarPedido": {
+        "Type": "Pass",
+        "ResultPath": "$",
+        "Next": "ProcessarPagamento"
+      },
+      "ProcessarPagamento": {
+        "Type": "Choice",
+        "Choices": [
+          {
+            "Variable": "$.valor",
+            "NumericGreaterThan": 150,
+            "Next": "PagamentoAprovado"
+          }
+        ],
+        "Default": "PagamentoNegado"
+      },
+      "PagamentoAprovado": {
+        "Type": "Succeed"
+      },
+      "PagamentoNegado": {
+        "Type": "Fail",
+        "Error": "Pagamento.Insuficiente",
+        "Cause": "O valor do pagamento não foi suficiente."
+      }
+    }
+  }
+  
